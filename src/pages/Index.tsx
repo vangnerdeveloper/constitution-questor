@@ -116,7 +116,16 @@ const Index = () => {
                 )}
                 style={{ transitionDelay: `${(index + 3) * 100}ms` }}
               >
-                <CategoryCard {...category} />
+                <CategoryCard 
+                  id={category.id}
+                  title={category.title}
+                  description={category.description}
+                  icon={category.icon}
+                  color={category.color}
+                  difficulty={category.difficulty}
+                  locked={category.locked}
+                  progress={category.progress}
+                />
               </div>
             ))}
           </div>
