@@ -26,6 +26,14 @@ const QuizCard: React.FC<QuizCardProps> = ({
   const [timeLeft, setTimeLeft] = useState(timeLimit);
   const [isTimerActive, setIsTimerActive] = useState(true);
   
+  // Reset state when question changes
+  useEffect(() => {
+    setSelectedOption(null);
+    setIsRevealed(false);
+    setTimeLeft(timeLimit);
+    setIsTimerActive(true);
+  }, [question, timeLimit]);
+  
   // Timer effect
   useEffect(() => {
     if (!isTimerActive) return;

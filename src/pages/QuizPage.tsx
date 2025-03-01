@@ -6,7 +6,7 @@ import QuizCard from '@/components/QuizCard';
 import ProgressBar from '@/components/ProgressBar';
 import FadeTransition from '@/components/FadeTransition';
 import { quizzes, categories } from '@/utils/quizData';
-import { AlertTriangle, CheckCircle, XCircle, Award } from 'lucide-react';
+import { Award } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { toast } from '@/components/ui/use-toast';
 
@@ -39,6 +39,11 @@ const QuizPage = () => {
     
     setQuiz(foundQuiz);
     setCategory(foundCategory);
+    // Reset the quiz state when loading a new quiz
+    setScore(0);
+    setCurrentQuestionIndex(0);
+    setQuizCompleted(false);
+    setCorrectAnswers(0);
   }, [categoryId, navigate]);
   
   const handleAnswer = (isCorrect: boolean) => {
@@ -109,10 +114,13 @@ const QuizPage = () => {
             </div>
             
             <FadeTransition show={showQuestion}>
-              <QuizCard 
-                question={quiz.questions[currentQuestionIndex]} 
-                onAnswer={handleAnswer}
-              />
+              {quiz.questions && quiz.questions[currentQuestionIndex] && (
+                <QuizCard 
+                  key={quiz.questions[currentQuestionIndex].id}  
+                  question={quiz.questions[currentQuestionIndex]} 
+                  onAnswer={handleAnswer}
+                />
+              )}
             </FadeTransition>
           </>
         ) : (
