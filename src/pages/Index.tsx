@@ -56,14 +56,14 @@ const Index = () => {
             
             <div className="flex items-center gap-3 mt-6 relative z-10">
               <button 
-                onClick={() => navigate('/articles')}
+                onClick={() => navigate('/article/article-21')}
                 className="bg-white/15 border border-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-white/20 touch-scale"
               >
                 Explore Articles
               </button>
               
               <button
-                onClick={() => navigate('/leaderboard')}
+                onClick={() => navigate('/quiz/fundamental-rights')}
                 className="bg-white text-constitution-blue px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-opacity-90 touch-scale"
               >
                 Start Quiz
@@ -148,7 +148,7 @@ const Index = () => {
             
             <button 
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              onClick={() => navigate('/articles')}
+              onClick={() => navigate('/article/article-21')}
             >
               Browse Articles
             </button>
