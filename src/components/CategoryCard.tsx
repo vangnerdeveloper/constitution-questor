@@ -2,6 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { LucideIcon } from 'lucide-react';
 
 export interface CategoryCardProps {
   id: string;

@@ -29,6 +29,12 @@ const Index = () => {
     };
   }, []);
   
+  // Create a modified version of the categories array with properly rendered icons
+  const categoriesWithRenderedIcons = categories.slice(0, 4).map(category => ({
+    ...category,
+    icon: React.createElement(category.icon)
+  }));
+  
   return (
     <div className="min-h-screen bg-background pb-24">
       <Header score={score} />
@@ -107,7 +113,7 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {categories.slice(0, 4).map((category, index) => (
+            {categoriesWithRenderedIcons.map((category, index) => (
               <div 
                 key={category.id}
                 className={cn(
