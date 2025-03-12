@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -6,25 +5,20 @@ import CategoryCard from '@/components/CategoryCard';
 import { categories } from '@/utils/quizData';
 import { BookOpen, Trophy, BarChart3 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useScore } from '@/contexts/ScoreContext';
 
 const Index = () => {
   const navigate = useNavigate();
-  const [score, setScore] = useState(0);
+  const { score } = useScore();
   const [animateItems, setAnimateItems] = useState(false);
   
   useEffect(() => {
-    // Simulate loading user data
-    const timer = setTimeout(() => {
-      setScore(120);
-    }, 500);
-    
     // Trigger animations after a slight delay
     const animationTimer = setTimeout(() => {
       setAnimateItems(true);
     }, 100);
     
     return () => {
-      clearTimeout(timer);
       clearTimeout(animationTimer);
     };
   }, []);

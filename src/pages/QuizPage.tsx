@@ -9,18 +9,20 @@ import { quizzes, categories } from '@/utils/quizData';
 import { Award } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { toast } from '@/components/ui/use-toast';
+import { useScore } from '@/contexts/ScoreContext';
 
 const QuizPage = () => {
   const { categoryId } = useParams();
   const navigate = useNavigate();
+  const { score, addPoints } = useScore();
   
-  const [score, setScore] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [quiz, setQuiz] = useState<any>(null);
   const [category, setCategory] = useState<any>(null);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [showQuestion, setShowQuestion] = useState(true);
+  const [quizScore, setQuizScore] = useState(0);
   
   useEffect(() => {
     // Find the quiz for this category
@@ -40,7 +42,7 @@ const QuizPage = () => {
     setQuiz(foundQuiz);
     setCategory(foundCategory);
     // Reset the quiz state when loading a new quiz
-    setScore(0);
+    setQuizScore(0);
     setCurrentQuestionIndex(0);
     setQuizCompleted(false);
     setCorrectAnswers(0);
@@ -48,7 +50,8 @@ const QuizPage = () => {
   
   const handleAnswer = (isCorrect: boolean) => {
     if (isCorrect) {
-      setScore(prev => prev + 10);
+      const pointsEarned = 10;
+      setQuizScore(prev => prev + pointsEarned);
       setCorrectAnswers(prev => prev + 1);
     }
     
@@ -70,10 +73,12 @@ const QuizPage = () => {
   };
   
   const handleFinish = () => {
-    // In a real app, we would save the score to a database
+    // Add the quiz score to the global score
+    addPoints(quizScore);
+    
     toast({
       title: "Quiz completed!",
-      description: `You earned ${score} points.`,
+      description: `You earned ${quizScore} points.`,
       variant: "default"
     });
     
@@ -103,7 +108,7 @@ const QuizPage = () => {
                 <p className="text-sm text-muted-foreground">
                   Question {currentQuestionIndex + 1} of {quiz.questions.length}
                 </p>
-                <p className="text-sm font-medium">Score: {score}</p>
+                <p className="text-sm font-medium">Score: {quizScore}</p>
               </div>
               
               <ProgressBar 
@@ -138,7 +143,7 @@ const QuizPage = () => {
             
             <div className="grid grid-cols-3 gap-4 mb-8">
               <div className="bg-muted/50 rounded-lg p-4 text-center">
-                <h3 className="text-2xl font-semibold">{score}</h3>
+                <h3 className="text-2xl font-semibold">{quizScore}</h3>
                 <p className="text-sm text-muted-foreground">Points Earned</p>
               </div>
               
