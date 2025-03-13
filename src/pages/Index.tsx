@@ -1,8 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import CategoryCard from '@/components/CategoryCard';
+import BackgroundAnimation from '@/components/BackgroundAnimation';
 import { categories, articles } from '@/utils/quizData';
 import { BookOpen, Trophy, BarChart3, Clock, Gavel } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -15,12 +15,10 @@ const Index = () => {
   const [featuredArticle, setFeaturedArticle] = useState(articles[0]);
   
   useEffect(() => {
-    // Trigger animations after a slight delay
     const animationTimer = setTimeout(() => {
       setAnimateItems(true);
     }, 100);
     
-    // Set a random featured article
     const randomIndex = Math.floor(Math.random() * articles.length);
     setFeaturedArticle(articles[randomIndex]);
     
@@ -29,7 +27,6 @@ const Index = () => {
     };
   }, []);
   
-  // Create a modified version of the categories array with properly rendered icons
   const categoriesWithRenderedIcons = categories.slice(0, 4).map(category => ({
     ...category,
     icon: React.createElement(category.icon)
@@ -37,10 +34,10 @@ const Index = () => {
   
   return (
     <div className="min-h-screen bg-background pb-24">
+      <BackgroundAnimation />
       <Header score={score} />
       
       <main className="pt-20 px-4 max-w-4xl mx-auto">
-        {/* Hero Section */}
         <section className={cn(
           "transition-all duration-700 transform",
           animateItems ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
@@ -72,7 +69,6 @@ const Index = () => {
           </div>
         </section>
         
-        {/* Stats Section */}
         <section className={cn(
           "grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 transition-all duration-700 transform",
           animateItems ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
@@ -99,7 +95,6 @@ const Index = () => {
           </div>
         </section>
         
-        {/* Categories Section */}
         <section>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-display font-semibold">Categories</h2>
@@ -137,7 +132,6 @@ const Index = () => {
           </div>
         </section>
         
-        {/* Featured Article */}
         <section className={cn(
           "mt-10 transition-all duration-700 transform",
           animateItems ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
@@ -195,7 +189,6 @@ const Index = () => {
             </div>
           </div>
           
-          {/* Related Articles Section */}
           <div className="mt-6">
             <h3 className="text-md font-medium mb-3">Related Articles</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -231,4 +224,3 @@ const Index = () => {
 };
 
 export default Index;
-
