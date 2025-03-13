@@ -35,7 +35,8 @@ const BackgroundAnimation: React.FC = () => {
         this.size = Math.random() * 2 + 0.5;
         this.speedX = (Math.random() - 0.5) * 0.5;
         this.speedY = (Math.random() - 0.5) * 0.5;
-        this.color = `rgba(10, 110, 189, ${Math.random() * 0.15 + 0.05})`;
+        // Black particles with varying opacity
+        this.color = `rgba(0, 0, 0, ${Math.random() * 0.3 + 0.1})`;
       }
       
       update() {
@@ -75,7 +76,7 @@ const BackgroundAnimation: React.FC = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Draw connections between nearby particles
-      ctx.strokeStyle = 'rgba(10, 110, 189, 0.03)';
+      ctx.strokeStyle = 'rgba(0, 0, 0, 0.05)'; // Black connections with low opacity
       ctx.lineWidth = 1;
       
       for (let i = 0; i < particles.length; i++) {
