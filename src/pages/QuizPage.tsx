@@ -14,7 +14,7 @@ import { useScore } from '@/contexts/ScoreContext';
 const QuizPage = () => {
   const { categoryId } = useParams();
   const navigate = useNavigate();
-  const { score, addPoints } = useScore();
+  const { score, addPoints, updateCompletion } = useScore();
   
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [quiz, setQuiz] = useState<any>(null);
@@ -76,6 +76,11 @@ const QuizPage = () => {
     // Add the quiz score to the global score
     addPoints(quizScore);
     
+    // Mark this quiz as completed
+    if (categoryId) {
+      updateCompletion(categoryId, true);
+    }
+    
     toast({
       title: "Quiz completed!",
       description: `You earned ${quizScore} points.`,
@@ -98,7 +103,7 @@ const QuizPage = () => {
   
   return (
     <div className="min-h-screen bg-background pb-24">
-      <Header title={category.title} showBackButton score={score} />
+      <Header title={category?.title} showBackButton score={score} />
       
       <main className="pt-20 px-4 max-w-3xl mx-auto">
         {!quizCompleted ? (
@@ -138,10 +143,10 @@ const QuizPage = () => {
             
             <h2 className="text-2xl font-display font-semibold text-center mb-2">Quiz Completed!</h2>
             <p className="text-center text-muted-foreground mb-8">
-              You've completed the {category.title} quiz.
+              You've completed the {category?.title} quiz.
             </p>
             
-            <div className="grid grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
               <div className="bg-muted/50 rounded-lg p-4 text-center">
                 <h3 className="text-2xl font-semibold">{quizScore}</h3>
                 <p className="text-sm text-muted-foreground">Points Earned</p>

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -9,7 +10,7 @@ import { useScore } from '@/contexts/ScoreContext';
 
 const Index = () => {
   const navigate = useNavigate();
-  const { score } = useScore();
+  const { score, completion } = useScore();
   const [animateItems, setAnimateItems] = useState(false);
   
   useEffect(() => {
@@ -68,7 +69,7 @@ const Index = () => {
         
         {/* Stats Section */}
         <section className={cn(
-          "grid grid-cols-2 gap-4 mb-8 transition-all duration-700 transform",
+          "grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 transition-all duration-700 transform",
           animateItems ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
           "animate-delay-200"
         )}>
@@ -88,7 +89,7 @@ const Index = () => {
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Completion</p>
-              <h3 className="text-xl font-semibold">15%</h3>
+              <h3 className="text-xl font-semibold">{completion}%</h3>
             </div>
           </div>
         </section>
