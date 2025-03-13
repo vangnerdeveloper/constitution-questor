@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import CategoryCard from '@/components/CategoryCard';
-import { categories } from '@/utils/quizData';
-import { BookOpen, Trophy, BarChart3 } from 'lucide-react';
+import { categories, articles } from '@/utils/quizData';
+import { BookOpen, Trophy, BarChart3, Clock, Gavel } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useScore } from '@/contexts/ScoreContext';
 
@@ -12,12 +12,17 @@ const Index = () => {
   const navigate = useNavigate();
   const { score, completion } = useScore();
   const [animateItems, setAnimateItems] = useState(false);
+  const [featuredArticle, setFeaturedArticle] = useState(articles[0]);
   
   useEffect(() => {
     // Trigger animations after a slight delay
     const animationTimer = setTimeout(() => {
       setAnimateItems(true);
     }, 100);
+    
+    // Set a random featured article
+    const randomIndex = Math.floor(Math.random() * articles.length);
+    setFeaturedArticle(articles[randomIndex]);
     
     return () => {
       clearTimeout(animationTimer);
@@ -51,7 +56,7 @@ const Index = () => {
             
             <div className="flex items-center gap-3 mt-6 relative z-10">
               <button 
-                onClick={() => navigate('/article/article-21')}
+                onClick={() => navigate('/article/' + featuredArticle.id)}
                 className="bg-white/15 border border-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-white/20 touch-scale"
               >
                 Explore Articles
@@ -143,15 +148,15 @@ const Index = () => {
             
             <button 
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              onClick={() => navigate('/article/article-21')}
+              onClick={() => navigate('/articles')}
             >
               Browse Articles
             </button>
           </div>
           
           <div 
-            onClick={() => navigate('/article/article-21')}
-            className="bg-card border rounded-xl p-5 shadow-sm hover:shadow transition-all cursor-pointer"
+            onClick={() => navigate('/article/' + featuredArticle.id)}
+            className="bg-card border rounded-xl p-5 shadow-sm hover:shadow-md transition-all cursor-pointer"
           >
             <div className="flex items-start gap-4">
               <div className="p-2 rounded-md bg-constitution-blue/10 text-constitution-blue">
@@ -159,20 +164,64 @@ const Index = () => {
               </div>
               
               <div>
-                <h3 className="text-lg font-medium mb-2">Article 21 - Protection of Life and Personal Liberty</h3>
-                <p className="text-muted-foreground text-sm line-clamp-2">
-                  One of the most important articles that has been interpreted expansively by the Supreme Court to include various rights essential for a dignified life.
+                <h3 className="text-lg font-medium mb-2">{featuredArticle.title}</h3>
+                <p className="text-muted-foreground text-sm line-clamp-3">
+                  {featuredArticle.content.split('\n\n')[0]}
                 </p>
                 
-                <div className="flex items-center mt-4">
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-muted inline-block mr-3">
-                    Fundamental Right
+                <div className="flex flex-wrap items-center mt-4 gap-2">
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-muted inline-block">
+                    {featuredArticle.category.split('-').map(word => 
+                      word.charAt(0).toUpperCase() + word.slice(1)
+                    ).join(' ')}
                   </span>
-                  <span className="text-xs text-muted-foreground">
-                    5 min read
-                  </span>
+                  
+                  <div className="flex items-center text-xs text-muted-foreground">
+                    <Clock size={12} className="mr-1" />
+                    <span>{featuredArticle.readTime} min read</span>
+                  </div>
+                  
+                  {featuredArticle.importantCase && (
+                    <div className="flex items-center text-xs text-constitution-blue">
+                      <Gavel size={12} className="mr-1" />
+                      <span>Key case: {featuredArticle.importantCase.length > 25 
+                        ? featuredArticle.importantCase.substring(0, 25) + '...' 
+                        : featuredArticle.importantCase}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
+            </div>
+          </div>
+          
+          {/* Related Articles Section */}
+          <div className="mt-6">
+            <h3 className="text-md font-medium mb-3">Related Articles</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {articles
+                .filter(article => article.id !== featuredArticle.id && article.category === featuredArticle.category)
+                .slice(0, 2)
+                .map(article => (
+                  <div 
+                    key={article.id}
+                    onClick={() => navigate('/article/' + article.id)}
+                    className="bg-card border rounded-lg p-3 hover:shadow-sm transition-all cursor-pointer flex items-start gap-3"
+                  >
+                    <div className="p-1.5 rounded-md bg-constitution-blue/10 text-constitution-blue mt-0.5">
+                      <BookOpen size={16} />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium line-clamp-1">{article.title}</h4>
+                      <div className="flex items-center mt-1 gap-2">
+                        <div className="flex items-center text-xs text-muted-foreground">
+                          <Clock size={10} className="mr-1" />
+                          <span>{article.readTime} min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
             </div>
           </div>
         </section>
@@ -182,3 +231,4 @@ const Index = () => {
 };
 
 export default Index;
+

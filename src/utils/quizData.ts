@@ -274,8 +274,14 @@ This article embodies the general principle of equality before law and equal pro
 Key aspects:
 - Prohibits class legislation but permits reasonable classification
 - Applies to both natural persons and artificial persons like corporations
-- Binding on all three organs of the state - legislature, executive, and judiciary`,
-    category: 'fundamental-rights'
+- Binding on all three organs of the state - legislature, executive, and judiciary
+
+The Supreme Court has held that Article 14 strikes at arbitrariness in state action and ensures fairness and equality of treatment. The principle of "equality before law" is borrowed from British Common Law, while "equal protection of laws" is taken from the American Constitution.
+
+In E.P. Royappa v. State of Tamil Nadu (1974), the Supreme Court held that Article 14 is a guarantee against arbitrariness. Any arbitrary action by the state violates Article 14.`,
+    category: 'fundamental-rights',
+    readTime: 4,
+    importantCase: 'E.P. Royappa v. State of Tamil Nadu (1974)'
   },
   {
     id: 'article-21',
@@ -288,8 +294,16 @@ Key aspects:
 - Right to life includes right to live with human dignity
 - Includes right to privacy, right to health, right to clean environment
 - Due process must be followed before deprivation of life or liberty
-- One of the most dynamic and evolving provisions of the Constitution`,
-    category: 'fundamental-rights'
+- One of the most dynamic and evolving provisions of the Constitution
+
+In Maneka Gandhi v. Union of India (1978), the Supreme Court held that the procedure established by law under Article 21 must be fair, just and reasonable, not arbitrary, fanciful or oppressive.
+
+In K.S. Puttaswamy v. Union of India (2017), the Supreme Court recognized privacy as a fundamental right under Article 21. This judgment has had far-reaching implications for digital privacy rights, data protection, and state surveillance.
+
+The right to health and access to medical treatment has also been recognized as a part of Article 21 in Paschim Banga Khet Mazdoor Samity v. State of West Bengal (1996).`,
+    category: 'fundamental-rights',
+    readTime: 6,
+    importantCase: 'Maneka Gandhi v. Union of India (1978)'
   },
   {
     id: 'article-32',
@@ -302,7 +316,158 @@ Key aspects:
 - Provides for five writs: Habeas Corpus, Mandamus, Prohibition, Certiorari, and Quo Warranto
 - Cannot be suspended except during emergency
 - Supreme Court has original jurisdiction in matters related to Fundamental Rights
-- This right itself is a Fundamental Right`,
-    category: 'fundamental-rights'
+- This right itself is a Fundamental Right
+
+Habeas Corpus is a writ to produce a person who has been detained, whether in prison or in private custody, before a court and to release him if such detention is found illegal.
+
+Mandamus is a command issued by court to a public official asking him to perform his official duties that he has failed or refused to perform.
+
+The Supreme Court in L. Chandra Kumar v. Union of India (1997) held that the power of judicial review under Article 32 is a part of the basic structure of the Constitution and cannot be abrogated even by a constitutional amendment.`,
+    category: 'fundamental-rights',
+    readTime: 5,
+    importantCase: 'L. Chandra Kumar v. Union of India (1997)'
+  },
+  {
+    id: 'article-15',
+    title: 'Article 15 - Prohibition of Discrimination',
+    content: `The State shall not discriminate against any citizen on grounds only of religion, race, caste, sex, place of birth or any of them.
+
+This article prohibits discrimination on specific grounds and permits the state to make special provisions for women, children, socially and educationally backward classes, Scheduled Castes, and Scheduled Tribes.
+
+Key aspects:
+- Applies only to citizens, not foreigners
+- Prohibits discrimination by the state on specified grounds
+- Allows reservation and special provisions for disadvantaged groups
+- Prohibits discrimination in access to public places and use of public resources
+
+The Constitution (103rd Amendment) Act, 2019 added clause (6) to Article 15, which enables the state to make special provisions for economically weaker sections (EWS) of citizens other than those mentioned in clauses (4) and (5).
+
+In Naz Foundation v. Govt. of NCT of Delhi (2009), the Delhi High Court interpreted Article 15 to include discrimination on the basis of sexual orientation. This interpretation was furthered in the landmark Navtej Singh Johar v. Union of India (2018) judgment where the Supreme Court decriminalized consensual homosexual acts.`,
+    category: 'fundamental-rights',
+    readTime: 5,
+    importantCase: 'Navtej Singh Johar v. Union of India (2018)'
+  },
+  {
+    id: 'article-19',
+    title: 'Article 19 - Protection of Certain Rights Regarding Freedom of Speech',
+    content: `All citizens shall have the right—
+(a) to freedom of speech and expression;
+(b) to assemble peaceably and without arms;
+(c) to form associations or unions;
+(d) to move freely throughout the territory of India;
+(e) to reside and settle in any part of the territory of India;
+(g) to practise any profession, or to carry on any occupation, trade or business.
+
+This article guarantees six fundamental freedoms to all citizens of India. These freedoms are considered essential for the personal liberty of citizens.
+
+Key aspects:
+- Freedom of speech and expression includes freedom of press
+- These rights are not absolute and are subject to reasonable restrictions
+- The State can impose restrictions in the interests of sovereignty, integrity, security, foreign relations, public order, decency, morality, contempt of court, defamation, and incitement to an offense
+- Article 19(1)(f) which guaranteed the right to property was deleted by the 44th Amendment Act, 1978
+
+In Shreya Singhal v. Union of India (2015), the Supreme Court struck down Section 66A of the Information Technology Act, holding that it violated the freedom of speech guaranteed under Article 19(1)(a) of the Constitution.
+
+The freedom of press is not explicitly mentioned in Article 19 but has been included in the freedom of speech and expression as established in Romesh Thappar v. State of Madras (1950).`,
+    category: 'fundamental-rights',
+    readTime: 6,
+    importantCase: 'Shreya Singhal v. Union of India (2015)'
+  },
+  {
+    id: 'article-39',
+    title: 'Article 39 - Certain Principles of Policy to be Followed by the State',
+    content: `The State shall, in particular, direct its policy towards securing—
+(a) that the citizens, men and women equally, have the right to an adequate means of livelihood;
+(b) that the ownership and control of the material resources of the community are so distributed as best to subserve the common good;
+(c) that the operation of the economic system does not result in the concentration of wealth and means of production to the common detriment;
+(d) that there is equal pay for equal work for both men and women;
+(e) that the health and strength of workers, men and women, and the tender age of children are not abused and that citizens are not forced by economic necessity to enter avocations unsuited to their age or strength;
+(f) that children are given opportunities and facilities to develop in a healthy manner and in conditions of freedom and dignity and that childhood and youth are protected against exploitation and against moral and material abandonment.
+
+This article contains some of the most important Directive Principles that guide the state to secure social and economic justice.
+
+Key aspects:
+- Aims to establish an egalitarian society and welfare state
+- Principle of equal pay for equal work has been elevated to the status of a fundamental right in some cases
+- Protection of children from exploitation is a key focus
+- These principles form the basis of many labor laws and social welfare schemes
+
+The Supreme Court in Randhir Singh v. Union of India (1982) elevated the principle of 'equal pay for equal work' to the status of a fundamental right by reading it with Article 14 and 16.
+
+In Bandhua Mukti Morcha v. Union of India (1984), the Supreme Court used Article 39(e) and (f) to issue guidelines for the abolition of bonded labor and child labor.`,
+    category: 'directive-principles',
+    readTime: 5,
+    importantCase: 'Randhir Singh v. Union of India (1982)'
+  },
+  {
+    id: 'article-51',
+    title: 'Article 51 - Promotion of International Peace and Security',
+    content: `The State shall endeavour to—
+(a) promote international peace and security;
+(b) maintain just and honourable relations between nations;
+(c) foster respect for international law and treaty obligations in the dealings of organised peoples with one another; and
+(d) encourage settlement of international disputes by arbitration.
+
+This article guides India's foreign policy and international relations. It reflects India's commitment to peaceful coexistence and international cooperation.
+
+Key aspects:
+- Embodies the principles of Panchsheel and non-alignment
+- Emphasizes peaceful dispute resolution through arbitration
+- Promotes respect for international law and treaty obligations
+- Forms the basis of India's participation in international organizations like the UN
+
+India's policy of non-alignment during the Cold War was guided by this article. Jawaharlal Nehru, India's first Prime Minister, was instrumental in formulating this policy.
+
+In Vishaka v. State of Rajasthan (1997), the Supreme Court relied on international conventions and Article 51 to formulate guidelines on sexual harassment in the workplace, which were later codified into the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013.`,
+    category: 'directive-principles',
+    readTime: 4,
+    importantCase: 'Vishaka v. State of Rajasthan (1997)'
+  },
+  {
+    id: 'article-370',
+    title: 'Article 370 - Temporary Provisions with respect to Jammu and Kashmir',
+    content: `Article 370 was a "temporary provision" that granted special autonomous status to Jammu and Kashmir. It was introduced to facilitate the accession of Jammu and Kashmir to the Indian Union in 1947.
+
+Key aspects:
+- Limited the Parliament's power to make laws for Jammu and Kashmir to matters in the Union and Concurrent Lists
+- Required the concurrence of the state government for applying other constitutional provisions
+- Allowed Jammu and Kashmir to have its own constitution
+- Provided for a separate flag and head of state called Sadar-i-Riyasat
+
+On August 5, 2019, the President of India issued a constitutional order superseding the 1954 order, making all provisions of the Indian Constitution applicable to Jammu and Kashmir.
+
+Subsequently, the Parliament passed the Jammu and Kashmir Reorganisation Act, 2019, which dissolved the state and reorganized it into two union territories – Jammu and Kashmir and Ladakh, effective from October 31, 2019.
+
+In 2023, the Supreme Court of India upheld the abrogation of Article 370 and affirmed that J&K does not retain an element of sovereignty after joining the Indian Union.`,
+    category: 'history',
+    readTime: 7,
+    importantCase: 'State Bank of India v. Santosh Gupta (2016)'
+  },
+  {
+    id: 'preamble',
+    title: 'The Preamble - Soul of the Indian Constitution',
+    content: `WE, THE PEOPLE OF INDIA, having solemnly resolved to constitute India into a SOVEREIGN SOCIALIST SECULAR DEMOCRATIC REPUBLIC and to secure to all its citizens:
+JUSTICE, social, economic and political;
+LIBERTY of thought, expression, belief, faith and worship;
+EQUALITY of status and of opportunity;
+and to promote among them all
+FRATERNITY assuring the dignity of the individual and the unity and integrity of the Nation;
+IN OUR CONSTITUENT ASSEMBLY this twenty-sixth day of November, 1949, do HEREBY ADOPT, ENACT AND GIVE TO OURSELVES THIS CONSTITUTION.
+
+The Preamble is considered to be the key to understanding the Constitution. It embodies the basic philosophy and fundamental values on which the Constitution is based.
+
+Key aspects:
+- The terms 'Socialist', 'Secular', and 'integrity' were added by the 42nd Amendment Act, 1976
+- It declares India to be a sovereign, socialist, secular, democratic republic
+- It secures justice, liberty, equality, and fraternity for all citizens
+- The date mentioned in the Preamble is November 26, 1949, when the Constitution was adopted
+
+In Kesavananda Bharati v. State of Kerala (1973), the Supreme Court held that the Preamble is a part of the Constitution and it can be amended, but the basic structure of the Constitution cannot be altered.
+
+The Preamble begins with the words "We, the People of India" which indicates that the Constitution derives its authority from the people of India, not from any king or parliament.`,
+    category: 'history',
+    readTime: 6,
+    importantCase: 'Kesavananda Bharati v. State of Kerala (1973)'
   }
 ];
+
