@@ -33,9 +33,9 @@ const BackgroundAnimation: React.FC = () => {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.size = Math.random() * 2 + 0.5;
-        this.speedX = Math.random() * 0.5 - 0.25;
-        this.speedY = Math.random() * 0.5 - 0.25;
-        this.color = `rgba(10, 110, 189, ${Math.random() * 0.15 + 0.05})`; // Constitution blue with opacity
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.speedY = (Math.random() - 0.5) * 0.5;
+        this.color = `rgba(10, 110, 189, ${Math.random() * 0.15 + 0.05})`;
       }
       
       update() {
@@ -61,14 +61,17 @@ const BackgroundAnimation: React.FC = () => {
     
     // Create particles
     const particles: Particle[] = [];
-    const particleCount = Math.min(100, Math.floor(window.innerWidth * window.innerHeight / 10000));
+    const particleCount = Math.min(100, Math.floor((window.innerWidth * window.innerHeight) / 10000));
     
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle());
     }
     
     // Animation loop
+    let animationFrameId: number;
+    
     const animate = () => {
+      animationFrameId = requestAnimationFrame(animate);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Draw connections between nearby particles
@@ -95,14 +98,14 @@ const BackgroundAnimation: React.FC = () => {
         particle.update();
         particle.draw();
       });
-      
-      requestAnimationFrame(animate);
     };
     
     animate();
     
+    // Cleanup function
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
